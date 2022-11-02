@@ -31,18 +31,18 @@ public class Driver {
         employeeCrudService.addEmployee(employee4);
         employeeCrudService.addEmployee(employee5);
 
-        System.out.println("\nAll Employees after adding :\n" + employeeCrudService.getAllEmployees());
+        System.out.println("\n All Employees after adding :\n" + employeeCrudService.getAllEmployees());
 
         employeeCrudService.deleteEmployeeById(3);
 
-        System.out.println("\nAll Employees after deletion :\n" + employeeCrudService.getAllEmployees());
+        System.out.println("\n All Employees after deletion :\n" + employeeCrudService.getAllEmployees());
 
         Employee newEmployee4 = new Employee(4, "Binoy",
                 new Address(100, "Ganguly Street", "Kolkata"));
 
         employeeCrudService.updateEmployee(newEmployee4);
 
-        System.out.println("\nEmployee after updating:\n" + employeeCrudService.getEmployeeById(4));
+        System.out.println("\n Employee after updating:\n" + employeeCrudService.getEmployeeById(4));
 
 
 
