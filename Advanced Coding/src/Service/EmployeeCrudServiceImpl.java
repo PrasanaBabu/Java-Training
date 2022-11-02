@@ -16,17 +16,17 @@ public class EmployeeCrudServiceImpl implements EmployeeCrudService {
     @Override
     public Employee getEmployeeById(Integer employeeId) {
 
-        for (int index=0 ; index < employees.size(); index++ )
-            if(employees.get(index).getId() == employeeId)
-                return employees.get(index);
+        for(Employee currentEmployee : employees){
+            if (currentEmployee.getId() == employeeId)
+                return currentEmployee;
+        }
         return new Employee();
     }
 
     @Override
     public void updateEmployee(Employee newEmployee) {
 
-        for (int index=0 ; index < employees.size(); index++ ) {
-            Employee toChangeEmployee = employees.get(index);
+        for (Employee toChangeEmployee : employees ) {
             if (toChangeEmployee.getId() == newEmployee.getId()) {
                 toChangeEmployee.setName(newEmployee.getName());
                 toChangeEmployee.setAddress(newEmployee.getAddress());
@@ -37,8 +37,7 @@ public class EmployeeCrudServiceImpl implements EmployeeCrudService {
     @Override
     public void deleteEmployeeById(Integer employeeId) {
 
-        for (int index = 0; index < employees.size(); index++){
-            Employee currentEmployee = employees.get(index);
+        for (Employee currentEmployee : employees){
             if (currentEmployee.getId() == employeeId) {
                 employees.remove(currentEmployee);
                 return;
